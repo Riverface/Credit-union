@@ -3,20 +3,70 @@ function Place(name,  notes, timeofYear, landmarks=[], id){
   this.landmarks = landmarks,
   this.notes = notes;
   this.timeofYear = timeofYear;
+  this.id = 0;
 }
+
+function refreshLocations(thebookinquestion){
+  $("#locbook").html("");
+  thebookinquestion.book.forEach(function(y){
+    $("#locbook").append(y.printer());
+  })
+}
+
+function LocationBook() {
+  this.book = [],
+  this.curId = 0
+}
+
+LocationBook.prototype.AddPlace = function(thisloc){
+  console.log(thisloc);
+  console.log(this.book);
+  this.book[this.curId] = thisloc;
+  thisloc.id = this.curId;
+  this.curId++;
+}
+Place.prototype.printer = function(){
+  var locPrint;
+  locPrint = " <div class='entry location' style='border-radius:20px; position:relative;'>";
+  locPrint+= "Name: <div class='container'>" + this.name + "</div>";
+  locPrint+="Time of Year: <div>" + this.timeofYear + "</div>";
+  locPrint+="Notes:<div>";
+  this.landmarks.forEach(function(y){
+    locPrint+= "<div class='note'>" + y + "</div>";
+  });
+  locPrint+="notes:";
+  this.notes.forEach(function(y){
+    locPrint+= "<div class='note'>" + y + "</div>";
+  });
+  locPrint+="</div>";
+  return locPrint;
+}
+
+//var newBook;
+//var newLoc;
 
 $(document).ready(function() {
   var newBook = new LocationBook();
   var notes = [];
   var marks = [];
+  var example = new Place();
+  example.name = "Oregon";
+  example.timeofYear = "October 21st";
+  example.landmarks = ["Pioneer Square", "Klamath Falls I guess?"];
+  example.notes = ["Rainy", "Lots of homeless people and meth heads, sometimes both at once."]
+  example.id = 0;
+    newBook.AddPlace(example);
+    refreshLocations(newBook);
+      console.log(newBook);
   $("#placesform").submit(function(event){
     event.preventDefault();
     console.log("asdfasdf");
-    newLoc = new Place($("#locname").val(),notes,$("#loctimeOfYear").val(),marks);
+    var newLoc = new Place($("#locname").val(),notes,$("#loctimeOfYear").val(),marks, newBook.curId);
     console.log("asdfasdf");
     console.log(newLoc);
-    console.log(notes);
+
     newBook.AddPlace(newLoc);
+    refreshLocations(newBook);
   });
   $("#noteadd").submit(function(event){
     //$("#locnote").
@@ -32,12 +82,10 @@ $(document).ready(function() {
     });
 
   });
-
   $("#Addlandmark").submit(function(event){
     //$("#locnote").
     event.preventDefault();
-    if($("#landmark").val() != "" )
-    {
+    if($("#landmark").val() != "" ){
       marks.push($("#landmark").val());
     }
     console.log(landmarks);
@@ -45,32 +93,6 @@ $(document).ready(function() {
     marks.forEach(function(y){
       $("#landmarks").append("<div class='note'>" + y + "<br></div>");
     });
-
   });
   console.log("shdfasjghasjklgh");
-  refreshLocations(newBook);
 });
-function refreshLocations(book){
-$("#locbook").html("");
-newBook.book.forEach(function(y){
-  $("#locbook").append(y.printer);
-
-})
-}
-function LocationBook(book, curId) {
-  book = [],
-  curId = 0;
-
-}
-
-LocationBook.prototype.AddPlace = function(){
-  newBook.book.push(newLoc);
-  newLoc.id = curId;
-  newBook.curId++;
-}
-Place.prototype.printer = function(){
-var locPrint;
-locPrint = "<div>";
-locPrint+= this.name;
-locPrint+="</div>";
-}

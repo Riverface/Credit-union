@@ -3,7 +3,6 @@
   border-style: outset;
   border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;
   border-top-left-radius: 10px; border-top-right-radius: 10px;
-
   width: 300px;
   color: black;
   display: block;
@@ -35,10 +34,10 @@
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
   padding: 5px;
-  background-color:lightgreen;
+  background-color:#edbbea;
   margin-bottom: 10px;
   font-family: 'Press Start 2P';
-  position:relative;
+  position:fixed;
 }
 .entry:nth-of-type(2n)
 {
@@ -129,7 +128,7 @@
 .jumbotron{
   font-family: 'Press Start 2P';
   padding: 10px;
-
+  position:fixed;
 }
 #ebselect{
 
@@ -214,8 +213,19 @@ border:5px inset;
 }
 #locbook{
 
-
-  position:absolute;
+  left:40%;
+  top:300px;
+  position:fixed;
   margin-left:100px;
-
+  width: 50%;
+  background-color: #a7f9e6;
+  overflow:scroll;
+}
+.addaplace{
+  background-color:#bed4f7;
+}
+.location
+{
+width:300px;
+height:auto;
 }
