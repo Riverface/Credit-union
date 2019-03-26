@@ -1,48 +1,49 @@
 <!DOCTYPE html>
-
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/master.css">
     <script type="text/javascript" src="js/jquery-3.3.1.js">  </script>
-        <script type="text/javascript" src="js/scripts.js">  </script>
+    <script type="text/javascript" src="js/scripts.js">  </script>
     <title></title>
   </head>
   <body>
-    <div class="jumbotron entry" style="width: 100%; z-index:1;">
-      <h1>Places I have been</h1>
-      <p></p>
-    </div>
-    <div class="entry addaplace" style="margin-top:290px; padding:20px; height: 600px; z-index:0;">
-      <form class="" id="placesform"></form>
+<div class="jumbotron">
+  <h1>The only bank in the universe</h1>
+</div>
 
-    <input type="text" class="btn" name="" value="" placeholder="name" id="locname" form="placesform">
-    <br><br>
-    <input type="text" class="btn" name="" value="" placeholder="time of year" form="placesform" id="loctimeOfYear">
-    <br><br>
+<div class="container" id='Account'>
+<form class="" action="index.html" method="post">
+  <br>
+Name: <input type="text" name="" value=""></input><br><br>
 
-    <form class="" id="noteadd" action="index.html"></form>
-      <input type="text" class="btn" name="" id="locnote" form="noteadd" value="" placeholder="notes" >
+Initial Deposit: <input type="text" name="" value="" id=''></input>
+<br>Which Plan?
 
-      <input type="submit" class="btn-default" name="AddNote" form="noteadd" value="AddNote">
-      <br>
-      <br>
-    <div class="" id="locnotes">
-    </div><br><br>
-    <form class="" id="Addlandmark" action="index.html"></form>
-      <input type="text" class="btn" name="" id="landmark" form="Addlandmark" value="" placeholder="notes">
-      <input type="submit" class="btn-default" name="AddNote" form="Addlandmark" value="AddNote">
-      <br><br>
-      <div class="" id="landmarks">
-      </div>
+</form>
+
+</div>
+<div class="container" id='Deposit-withdraw'>
+  <form class="" id='DWform' action="index.html" method="post">
+
+<br><h3>Deposit or Withdraw</h3>
+<br>
+
+Put in: <input type="number" step=".01" name="" value=""></input>
+<br><br><br>
+Take out:<input type="number" name="" step=".0  1"  value=""></input>
 <br><br>
-    <button type="submit" name="Addplace" form="placesform" class="btn-default" value="AddNote">sadfsda</button>
-    <br>
-    <br>
-    </div>
-    <div class="entry" id="locbook" style="">
+<input type="submit" class='btn' name="button"></input>
 
-    </div>
+</form>
+</div>
+<div class="container" id='totalshell'>
+  <br>
+receipt:
+<div class="" id='receipt'>
+
+</div>
+</div>
   </body>
 </html>
