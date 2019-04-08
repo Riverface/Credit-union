@@ -12,38 +12,40 @@
 <div class="jumbotron">
   <h1>The only bank in the universe</h1>
 </div>
-
 <div class="container" id='Account'>
-<form class="" action="index.html" method="post">
-  <br>
-Name: <input type="text" name="" value=""></input><br><br>
-
-Initial Deposit: <input type="text" name="" value="" id=''></input>
-<br>Which Plan?
-
-</form>
-
+<form class="" action="index.html" id='registerform' method="post"><br>
+Name: <input type="text" name="" id='newname' value=""></input><br><br>
+Initial Deposit: <input type="text" name="" value="" id='initdeposit'></input>
+<br>Which Plan?<br>
+<div class="" id='plans'>
 </div>
+<button type="submit" name="submit">submit</button>
+</form>
+</div>
+
+
+
 <div class="container" id='Deposit-withdraw'>
-  <form class="" id='DWform' action="index.html" method="post">
-
-<br><h3>Deposit or Withdraw</h3>
-<br>
-
-Put in: <input type="number" step=".01" name="" value=""></input>
+<form class="" id='DWform' action="index.html" method="post">
+<br><h3>Deposit or Withdraw</h3><br>
+Put in: <input id="deposit" type="number"  step=".01" name="" value=""></input>
 <br><br><br>
-Take out:<input type="number" name="" step=".0  1"  value=""></input>
+Take out:<input id="withdraw" type="number" name=""  step=".01"  value=""></input>
 <br><br>
 <input type="submit" class='btn' name="button"></input>
+</form>
+<div class="container" id="acctshell"><br>
+  <form class="" action="index.html" method="post">
+  <select id='accts'>
 
+  </select>
 </form>
 </div>
-<div class="container" id='totalshell'>
-  <br>
-receipt:
-<div class="" id='receipt'>
-
 </div>
+<div class="container" id='totalshell'><br>
+receipt:
+<div class="" id='receiptheader'></div>
+<div class="" id='receipt'></div>
 </div>
   </body>
 </html>

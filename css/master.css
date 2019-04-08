@@ -6,15 +6,19 @@
 }
 #Account
 {
-  height:150px;
+  float:left;
+  display:flex;
+  height:300px;
   width: 350px;
-background-color:#baffc9;
+  background-color:#baffc9;
 }
 #Deposit-withdraw{
   background-color:#f49ac2;
   padding-left: 30px;
   height: 300px;
   width: 500px;
+  float:left;
+  display:flex;
 }
 #total
 {
@@ -25,11 +29,21 @@ background-color:#baffc9;
   width: 150px;
 }
 #totalshell{
+
+  display:flex;
   background-color:#ffdfba;
   width: 200px;
   height:250px;
 }
+#acctshell
+{
+  float:left;
+  display:block;
+  width: 200px;
+  height: 100px;
+  background-color:#E0BBE4;
+  margin-top: 50px;
+}
 body{
   background-color: #bae1ff;
-
 }
